@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Changer</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+background-color: #f0f0f0;
+}
+
+button {
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+margin-top: 20px;
+}
+
+button:hover {
+background-color: #0056b3;
+}
+</style>
+</head>
+
+<body>
+<button id="colorButton">Change Color</button>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+// Get the button element
+var colorButton = document.getElementById("colorButton");
+
+// Add event listener to the button
+colorButton.addEventListener("click", function() {
+// Generate random RGB color values
+var red = Math.floor(Math.random() * 256);
+var green = Math.floor(Math.random() * 256);
+var blue = Math.floor(Math.random() * 256);
+
+// Set the background color of the body
+document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+});
+});
+</script>
+</body>
+</html>
