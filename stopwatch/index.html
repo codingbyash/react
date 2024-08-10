@@ -1,0 +1,192 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #000;
+        }   
+        h1{
+            color: antiquewhite;
+        }
+        #time{
+            color:rgb(133, 152, 152);
+            font-size: 20px;
+
+        }
+
+        .a{
+            /* display:flex; */
+            justify-content: center;
+            
+        }
+        button{
+          padding:6px ;
+          margin: 9px;
+          border-radius: 5px;
+          box-shadow: white ;
+        }
+        button:hover{
+            font-size:20px; 
+        }
+
+        .a {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="a">
+
+    <h1>Stopwatch</h1>
+
+    <div id="time"> 00:00:00 </div>
+    <div class="btn">
+
+    <button onclick= "start()">Start</button>
+    <button onclick= "stop()">Stop</button>
+    <button onclick="reset()">Reset</button>
+
+</div>
+</div>
+
+
+<script>
+      
+        let timer;
+        let hours = 0;
+        let minutes = 0;
+        let seconds = 0;
+
+        function start() {
+            timer = setInterval(function() {
+                seconds++;
+                if (seconds === 60) {
+                    seconds = 0;
+                    minutes++;
+                }
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+                document.getElementById('time').innerText = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        function stop() {
+            clearInterval(timer);
+        }
+
+        function reset() {
+            clearInterval(timer);
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+            document.getElementById('time').innerText = '00:00:00';
+        }
+    </script>
+
+
+</script>
+
+
+
+
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #000;
+        }   
+        h1 {
+            color: antiquewhite;
+        }
+        #time {
+            color: rgb(133, 152, 152);
+            font-size: 20px;
+        }
+
+        .a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        button {
+            padding: 6px;
+            margin: 9px;
+            border-radius: 5px;
+            box-shadow: white;
+        }
+
+        button:hover {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <h1>Stopwatch</h1>
+        <div id="time"> 00:00:00 </div>
+        <div class="btn">
+            <button onclick="start()">Start</button>
+            <button onclick="stop()">Stop</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let timer;
+        let hours = 0;
+        let minutes = 0;
+        let seconds = 0;
+
+        function start() {
+            timer = setInterval(function() {
+                seconds++;
+                if (seconds === 60) {
+                    seconds = 0;
+                    minutes++;
+                }
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+                document.getElementById('time').innerText = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        function stop() {
+            clearInterval(timer);
+        }
+
+        function reset() {
+            clearInterval(timer);
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+            document.getElementById('time').innerText = '00:00:00';
+        }
+    </script>
+</body>
+</html>
